@@ -51,12 +51,18 @@
 
 .player-button {
   position: relative;
-  left: 20px;
-  top: -40px
+  font-size: 15px;
+  left: 15%;
+  top: -19.5px;
+  padding: 10px 5px;
+  margin: 2px;
 }
 
 .dealer-button {
   position: relative;
-  left: 330px;
-  top: -64.5px
+  font-size: 15px;
+  left: 60%;
+  top: -64.5px;
+  padding: 10px 5px;
+  margin: 2px;
 }

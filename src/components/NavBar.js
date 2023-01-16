@@ -10,9 +10,6 @@ function NavBar() {
         <br></br>
         <button className="dealer-button">Dealer Hit</button>
         <button className="dealer-button">Dealer Stay</button>
-        <hr></hr>
-
-
     </div>
   )
 }

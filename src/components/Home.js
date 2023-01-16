@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 function Home() {
   const [getHands, setGetHands] = useState([])
-  const [cardValues, setCardValues] = useState([])
- 
-  
+  const [cardValues, setCardValues] = useState([])  
 
   useEffect(() => {
     fetch("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
@@ -52,17 +50,23 @@ function Home() {
       return 10
     } else if (value === "K") {
       return 10
+    } else {
+      return "Error";
     }});
 
-    console.log(intValues)
+    let playerValue = intValues.slice(0,2)
+    let dealerValue = intValues.slice(2)
+
+    let playerTotal = playerValue[0] + playerValue[1];
+    let dealerTotal = dealerValue[0] + dealerValue[1];
 
   return (
     <div className="card-table">
       {dealer}
       <br></br>
-      Dealer
+      Dealer {dealerTotal}
       <hr></hr>
-      Player
+      Player {playerTotal}
       <br></br>  
       {player}         
     </div>
