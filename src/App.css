@@ -1,3 +1,12 @@
+* {
+  color: #fff;
+}
+
+html {
+  background-image: url("https://img.freepik.com/premium-photo/casino-chips-playing-cards-dices-dark-reflective-background_220507-21347.jpg");
+  background-size:cover;
+}
+
 
 .App {
   text-align: center;
@@ -5,26 +14,10 @@
 
 
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
@@ -42,29 +35,65 @@
 
 .card-table{
   text-align: center;
-  padding: 50px 10px;
-  margin: 5px;
+  padding: 10px 10px;
   font-size: 20px;
 }
 
 .nav-bar {
-  background-color: #282c34;
+  background-image: url("https://t4.ftcdn.net/jpg/01/82/89/97/360_F_182899779_bFw82KGrCJ6wOXas4MjFRGUIvn9IOCcq.jpg");
 }
 
 .player-button {
   position: relative;
-  font-size: 15px;
-  left: 15%;
-  top: -19.5px;
+  font-size: 25px;
+  color: #fff;
+  left: 50%;
+  top: -110px;
   padding: 10px 5px;
   margin: 2px;
+  border-radius: 18px;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_dPa8u-EzMaMDyUxEvEl4xugdG9PjC_idFx8edmbgbmqVQnmRUwpGwe6GOwTuIiCc4PA&usqp=CAU");
+}
+
+.player-button:hover {
+  cursor: pointer;
 }
 
 .dealer-button {
   position: relative;
-  font-size: 15px;
-  left: 60%;
-  top: -64.5px;
+  font-size: 25px;
+  color: #fff;
+  left: 80%;
+  top: -164.5px;
   padding: 10px 5px;
   margin: 2px;
+  border-radius: 18px;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_dPa8u-EzMaMDyUxEvEl4xugdG9PjC_idFx8edmbgbmqVQnmRUwpGwe6GOwTuIiCc4PA&usqp=CAU");
+}
+
+.dealer-button:hover {
+  cursor: pointer;
+}
+
+.post-button {
+  position: relative;
+  font-size: 18px;
+  color: #fff;
+  left: 50%;
+  top: -105px;
+  padding: 7px 5px;
+  margin: 2px;
+  border-radius: 18px;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_dPa8u-EzMaMDyUxEvEl4xugdG9PjC_idFx8edmbgbmqVQnmRUwpGwe6GOwTuIiCc4PA&usqp=CAU");
+}
+
+.welcome-message {
+  position: relative;
+  top: -4px;
+  left: 50px;
+  font-size: 40px; 
+}
+
+hr {
+  width: 300px;
 }

@@ -159,15 +159,28 @@ function Home({ handleDeckId, playerHit, playerHitCard, dealerHit, dealerHitCard
     let playerTotal = playerValue[0] + playerValue[1];
     let dealerTotal = dealerValue[0] + dealerValue[1];
 
+    let dealerHand = dealerTotal + dealerHitTotal;
+    let playerHand = playerTotal + playerHitTotal;
+
+    if(dealerHand >= 22) {
+      dealerHand = "BUST" 
+    }
+
+    if(playerHand >= 22) {
+      playerHand = "BUST" 
+    }
+
+    console.log(dealerHand)
+
   return (
     <div className="card-table">
       {dealerHitCard}
       <br></br>
       {dealer}
       <br></br>
-      Dealer {`${dealerTotal + dealerHitTotal}`}
+      {`Dealer ${dealerHand}`}
       <hr></hr>
-      Player {`${playerTotal + playerHitTotal}`}
+      {`Player ${playerHand}`}
       <br></br>  
       {player}
       <br></br>
