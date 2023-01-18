@@ -170,7 +170,7 @@ function Home({ handleDeckId, playerHit, playerHitCard, dealerHit, dealerHitCard
       playerHand = "BUST" 
     }
 
-    console.log(dealerHand)
+    console.log(cardValues)
 
   return (
     <div className="card-table">
@@ -179,7 +179,7 @@ function Home({ handleDeckId, playerHit, playerHitCard, dealerHit, dealerHitCard
       {dealer}
       <br></br>
       {`Dealer ${dealerHand}`}
-      <hr></hr>
+      <hr className="gameHR"></hr>
       {`Player ${playerHand}`}
       <br></br>  
       {player}
