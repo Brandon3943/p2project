@@ -64,7 +64,7 @@ function App() {
     <div>
       <Switch>
 
-        <Route path='/login'>
+        <Route path='/login/new'>
             <Login handleUpdateUser={handleUpdateUser} />
         </Route>
 

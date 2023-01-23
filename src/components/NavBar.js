@@ -43,7 +43,7 @@ function NavBar({ handlePlayerHit, handleDealerHit, user }) {
           </Link>
         </div>
         </>
-          ) : <Link to="/login">
+          ) : <Link to="/login/new">
            <button className="nav-login-button">Login</button>
           </Link>}
         </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useHistory } from "react-router-dom"
+import { useHistory, Link } from "react-router-dom"
 
 function Login({ handleUpdateUser }) {
   const [name, setName] = useState("")

@@ -6,60 +6,6 @@
         "https://deckofcardsapi.com/static/img/0C.png"
       ],
       "id": 1
-    },
-    {
-      "image": [
-        "https://deckofcardsapi.com/static/img/3C.png",
-        "https://deckofcardsapi.com/static/img/QC.png",
-        "https://deckofcardsapi.com/static/img/5D.png"
-      ],
-      "id": 2
-    },
-    {
-      "image": [
-        "https://deckofcardsapi.com/static/img/7H.png",
-        "https://deckofcardsapi.com/static/img/5S.png",
-        "https://deckofcardsapi.com/static/img/3D.png",
-        "https://deckofcardsapi.com/static/img/2H.png"
-      ],
-      "id": 3
-    },
-    {
-      "image": [
-        "https://deckofcardsapi.com/static/img/QH.png",
-        "https://deckofcardsapi.com/static/img/6S.png"
-      ],
-      "id": 4
-    },
-    {
-      "image": [
-        "https://deckofcardsapi.com/static/img/8D.png",
-        "https://deckofcardsapi.com/static/img/4C.png",
-        "https://deckofcardsapi.com/static/img/4D.png"
-      ],
-      "id": 5
-    },
-    {
-      "image": [
-        "https://deckofcardsapi.com/static/img/6C.png",
-        "https://deckofcardsapi.com/static/img/5C.png",
-        "https://deckofcardsapi.com/static/img/5D.png"
-      ],
-      "id": 6
-    },
-    {
-      "image": [
-        "https://deckofcardsapi.com/static/img/9D.png",
-        "https://deckofcardsapi.com/static/img/aceDiamonds.png"
-      ],
-      "id": 7
-    },
-    {
-      "image": [
-        "https://deckofcardsapi.com/static/img/JD.png",
-        "https://deckofcardsapi.com/static/img/JH.png"
-      ],
-      "id": 8
     }
   ]
 }
