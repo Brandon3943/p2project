@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react'
 
-function Home({ handleDeckId, playerHit, playerHitCard, dealerHit, dealerHitCard }) {
+function Home({ handleDeckId, playerHit, playerHitCard, dealerHit, dealerHitCard, updateWinningHand, setPlayerHit, setDealerHit, setPlayerHitCard, setDealerHitCard}) {
   const [getHands, setGetHands] = useState([])
-  const [cardValues, setCardValues] = useState([])  
-
-  useEffect(() => {
-    fetch("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
+  const [cardValues, setCardValues] = useState([])
+  
+  function initializeGame() {
+    setPlayerHit([])
+      setDealerHit([])
+      setPlayerHitCard([])
+      setDealerHitCard([])
+      fetch("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
       .then(resp => resp.json())
       .then(data => {
         fetch(`https://deckofcardsapi.com/api/deck/${data.deck_id}/draw/?count=4`)
@@ -19,9 +23,11 @@ function Home({ handleDeckId, playerHit, playerHitCard, dealerHit, dealerHitCard
               return <img src={card.image} key={card.code} code={card.code} alt="cards" width="100" className="hands"/>
           }))})
       })
-    }, [])   
-    
+  }
   
+ useEffect(() => {
+  initializeGame()
+    }, [])      
 
   let player = getHands.slice(0,2)
   let dealer = getHands.slice(2)
@@ -56,7 +62,6 @@ function Home({ handleDeckId, playerHit, playerHitCard, dealerHit, dealerHitCard
     } else {
       return "Error";
     }});
-
    
     let hitPlayerIntValues = playerHit.map(value => {
       if(value === "A") {
@@ -152,7 +157,6 @@ function Home({ handleDeckId, playerHit, playerHitCard, dealerHit, dealerHitCard
         dealerHitTotal = 0;
       }
 
-
     let playerValue = intValues.slice(0,2)
     let dealerValue = intValues.splice(2)
 
@@ -169,8 +173,28 @@ function Home({ handleDeckId, playerHit, playerHitCard, dealerHit, dealerHitCard
     if(playerHand >= 22) {
       playerHand = "BUST" 
     }
+  
+    let savedHand = [...dealer, ...dealerHitCard]
+   
+    function postHand() {
+      let cardImgs = savedHand.map(card => card.props.src)
+      console.log({image: cardImgs})
 
-    console.log(cardValues)
+      fetch("http://localhost:3002/saved", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({image: cardImgs})
+      })
+      .then(resp => resp.json())
+      .then(data => {
+        updateWinningHand(data)
+        initializeGame()     
+      })
+      
+    }  
+
 
   return (
     <div className="card-table">
@@ -178,9 +202,10 @@ function Home({ handleDeckId, playerHit, playerHitCard, dealerHit, dealerHitCard
       <br></br>
       {dealer}
       <br></br>
-      {`Dealer ${dealerHand}`}
+      {`Player ${dealerHand}`}
+      <button className="nav-button" id="post-button" onClick={postHand}>Save Hand & Reset</button>
       <hr className="gameHR"></hr>
-      {`Player ${playerHand}`}
+      {`Dealer ${playerHand}`}
       <br></br>  
       {player}
       <br></br>

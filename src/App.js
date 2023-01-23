@@ -1,22 +1,37 @@
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import About from './pages/About';
 import Fallback from './pages/Fallback';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import NavBar from './components/NavBar';
+import PastWins from './pages/PastWins';
 
 function App() {
   const [deckId, setDeckId] = useState("")
   const [playerHit, setPlayerHit] = useState([])
-  const [playerHitCard, setPlayerHitCard] = useState("")
+  const [playerHitCard, setPlayerHitCard] = useState([])
   const [dealerHit, setDealerHit] = useState([])
-  const [dealerHitCard, setDealerHitCard] = useState("")
+  const [dealerHitCard, setDealerHitCard] = useState([])
+  const [winningHand, setWinningHand] = useState([])
   const [user, setUser] = useState({
-    name: null,
-    image: null
+    name: "",
+    image: ""
   })
+
+
+  useEffect(() => {
+    fetch("http://localhost:3002/saved")
+      .then(resp => resp.json())
+      .then(data => setWinningHand(data))   
+  }, [])
+
+  function updateWinningHand(value) {
+    setWinningHand(prev => [...prev, value])
+  }
+
+
 
   function handleDeckId(id) {
     setDeckId(id)
@@ -57,9 +72,13 @@ function App() {
             <About />
         </Route> 
 
+        <Route path='/pastwins'>
+            <PastWins winningHand={winningHand}/>
+        </Route>
+
         <Route exact path='/'>
             <NavBar user={user} handlePlayerHit={handlePlayerHit} handleDealerHit={handleDealerHit}/>
-            <Home handleDeckId={handleDeckId} playerHit={playerHit} playerHitCard={playerHitCard} dealerHit={dealerHit} dealerHitCard={dealerHitCard}/>
+            <Home handleDeckId={handleDeckId} playerHit={playerHit} playerHitCard={playerHitCard} dealerHit={dealerHit} dealerHitCard={dealerHitCard} updateWinningHand={updateWinningHand} setDealerHit={setDealerHit} setPlayerHit={setPlayerHit} setPlayerHitCard={setPlayerHitCard} setDealerHitCard={setDealerHitCard}/>
         </Route> 
 
         <Route path='/*'>

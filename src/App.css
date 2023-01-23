@@ -14,7 +14,6 @@ html {
 }
 
 
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -42,13 +41,16 @@ html {
   padding: 10px 10px;
   font-size: 20px;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  position: relative;
+  left: 60px;
+
 }
 
 .nav-bar {
   background-image: url("https://t4.ftcdn.net/jpg/01/82/89/97/360_F_182899779_bFw82KGrCJ6wOXas4MjFRGUIvn9IOCcq.jpg");
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   height: 160px;
   display: flex;
   padding: 10px 0px;
@@ -97,6 +99,7 @@ html {
   margin: 0;
   padding: 0;
   font-size: 35px;
+  
 }
 
 .nav-login-button:hover {
@@ -123,7 +126,7 @@ html {
 
 
 .welcome-message {
-  font-size: 25px; 
+  font-size: 22px; 
   text-align: center;
 }
 
@@ -138,7 +141,7 @@ html {
   height: 200px;
   position: absolute;
   top: 25%;
-  left: 25%;
+  left: 40%;
 }
 
 
@@ -158,6 +161,7 @@ html {
   width: 50%;
   font-size: 10px;
   text-align: center;
+  padding: 10px
 }
 
 .about {
@@ -167,11 +171,37 @@ html {
   height: 300px;
   position: absolute;
   top: 25%;
-  left: 25%;
+  left: 35%;
   font-size: 26px;
 }
 
 .about button {
   vertical-align: bottom;
+  position: relative;
+  top: 15px;
+}
+
+:disabled {
+  color: black;
+}
+
+.winning-hands {
+  text-align: center;
+}
+
+.winning-table {
+  text-align: center;
+  position: relative;  
+}
+
+#post-button {
+  position: absolute;
+  right: 60%;
+}
+
+
+#post-back-to-game {
+  position: relative;
+  left: 46.25%;
 }
 
