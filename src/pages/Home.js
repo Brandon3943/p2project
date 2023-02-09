@@ -165,6 +165,7 @@ function Home({ handleDeckId, playerHit, playerHitCard, dealerHit, dealerHitCard
 
     let dealerHand = dealerTotal + dealerHitTotal;
     let playerHand = playerTotal + playerHitTotal;
+    console.log(playerValue)
 
     if(dealerHand >= 22) {
       dealerHand = "BUST" 

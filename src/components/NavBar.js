@@ -38,7 +38,7 @@ function NavBar({ handlePlayerHit, handleDealerHit, user }) {
           <button className="nav-link-buttons">Past Wins</button>
           </Link>
         <hr></hr>
-          <Link to="/login">
+          <Link to="/login/new">
            <button className="nav-link-buttons">Switch User</button>
           </Link>
         </div>
